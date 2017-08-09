@@ -3,22 +3,22 @@
   <title>PHP Test</title>
  </head>
  <body>
-  $root = __DIR__;
-
-function is_in_dir($file, $directory, $recursive = true, $limit = 1000) {
-    $directory = realpath($directory);
-    $parent = realpath($file);
-    $i = 0;
-    while ($parent) {
-        if ($directory == $parent) return true;
-        if ($parent == dirname($parent) || !$recursive) break;
-        $parent = dirname($parent);
-    }
-    return false;
-}
 
   
- <?php echo '<p>PHP Hello World</p>' ?>
+  <?php
+echo "Here are our files";
+$path = ".";
+$dh = opendir($path);
+$i=1;
+while (($file = readdir($dh)) !== false) {
+    if($file != "." && $file != ".." && $file != "index.php" && $file != ".htaccess" && $file != "error_log" && $file != "cgi-bin") {
+        echo "<a href='$path/$file'>$file</a><br /><br />";
+        $i++;
+    }
+}
+closedir($dh);
+?> 
+  
   <a href="chart"> chart</a>
  </body>
 </html>
