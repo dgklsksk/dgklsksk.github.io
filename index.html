@@ -3,6 +3,21 @@
   <title>PHP Test</title>
  </head>
  <body>
+  $root = __DIR__;
+
+function is_in_dir($file, $directory, $recursive = true, $limit = 1000) {
+    $directory = realpath($directory);
+    $parent = realpath($file);
+    $i = 0;
+    while ($parent) {
+        if ($directory == $parent) return true;
+        if ($parent == dirname($parent) || !$recursive) break;
+        $parent = dirname($parent);
+    }
+    return false;
+}
+ <?php echo $root ?> 
+  
  <?php echo '<p>PHP Hello World</p>' ?>
   <a href="chart"> chart</a>
  </body>
