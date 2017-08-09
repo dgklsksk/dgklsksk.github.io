@@ -13,7 +13,7 @@ filepath=./
   echo "  <UL>" >> $OUTPUT
   for i in `find "$filepath" -maxdepth 1 -mindepth 1 -type d| sort`; do
     file=`basename "$i"`
-    echo "    <LI><a href=\"/$path/$file/site-index.html\">$file</a></LI>" >> $OUTPUT
+    echo "    <LI><a href=\"$path/$file/site-index.html\">$file</a></LI>" >> $OUTPUT
   done
   echo "  </UL>" >> $OUTPUT
 #done
