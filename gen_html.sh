@@ -1,8 +1,8 @@
 #!/bin/bash
 
-ROOT=/tmp/test
+ROOT=./
 HTTP="/"
-OUTPUT="_includes/site-index.html" 
+OUTPUT="site-index.html" 
 
 i=0
 echo "<UL>" > $OUTPUT
