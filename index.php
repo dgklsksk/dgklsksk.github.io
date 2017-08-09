@@ -1,5 +1,9 @@
 
-
+<html>
+  <head>
+    browse dir
+  </head>
+  <body>
   
   <?php
 echo "Here are our files";
@@ -14,7 +18,8 @@ while (($file = readdir($dh)) !== false) {
 }
 closedir($dh);
 ?> 
-  
+  </body>
+</html>
 
 
 
